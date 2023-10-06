@@ -3,13 +3,13 @@ This module defines the SpaceshipGame class
 and the main function to run the game.
 """
 
-pass
+import os
 
 def clear_terminal():
     """
     Clear the terminal screen.
     """
-    pass
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 def typewriter_effect(text, delay=0.05):
     """
