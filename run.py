@@ -186,7 +186,24 @@ class User:
         """
         Manually place the user's spaceships on the board.
         """
-        pass
+        for ship_number in range(1, self.num_ships + 1):
+            message = f"Placing {self.name}'s spaceship {ship_number} out of {self.num_ships}"
+            typewriter_effect(message)
+            coordinates = []  # List to store ship coordinates
+            while True:
+                x_coordinate, y_coordinate = self.get_valid_input()
+                if (x_coordinate, y_coordinate) not in coordinates and \
+                    self.board.grid[x_coordinate][y_coordinate] == '🌫':
+                    coordinates.append((x_coordinate, y_coordinate))
+                    self.board.grid[x_coordinate][y_coordinate] = '🚀'
+                    self.ships.append(Ship(self.name, coordinates))
+                    break
+                elif (x_coordinate, y_coordinate) in coordinates:
+                    print(f"You have already placed spaceship {ship_number} at "
+                          f"({x_coordinate}, {y_coordinate}). Try again.")
+                else:
+                    print("Invalid coordinates or spot already occupied. "
+                          "Please choose valid coordinates.")
 
     def place_ships_randomly(self):
         """
