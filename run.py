@@ -393,7 +393,12 @@ class SpaceshipGame:
         Returns:
             tuple: A tuple containing the x_coordinate and y_coordinate of the guess.
         """
-        pass
+        while True:
+            x_coordinate = random.randint(0, board_size - 1)
+            y_coordinate = random.randint(0, board_size - 1)
+            if (x_coordinate, y_coordinate) not in player_board.guessed_locations:
+                player_board.guessed_locations.add((x_coordinate, y_coordinate))
+                return x_coordinate, y_coordinate
 
     def place_computer_ships(self, computer, num_ships, board_size):
         """
