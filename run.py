@@ -456,7 +456,13 @@ def main():
     """
     Define the main function to run the game.
     """
-    pass
+    title_screen = TitleScreen()
+    title_screen.display()
+    if title_screen.play_game:
+        game = SpaceshipGame()
+        game.play()
+    else:
+        print("Goodbye!")
 
 if __name__ == "__main__":
     main()
