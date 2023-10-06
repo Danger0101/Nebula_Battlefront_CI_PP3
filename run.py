@@ -66,7 +66,64 @@ class Board:
     """
     Represents the game board.
     """
-    pass
+    def __init__(self, size):
+        """
+        Initialize a new game board.
+
+        Args:
+            size (int): The size of the square board.
+        """
+        self.size = size
+        self.grid = [['🌫' for _ in range(size)] for _ in range(size)]
+        self.guessed_locations = set()
+        self.planets = set()
+
+    def display(self, hide_ships=True):
+        """
+        Display the game board.
+
+        Args:
+            hide_ships (bool, optional): Whether to hide the ships on the board. Defaults to True.
+        """
+        print('  ' + ' '.join(str(i) for i in range(self.size)))
+        for i, row in enumerate(self.grid):
+            row_display = []
+            for j, cell in enumerate(row):
+                if (i, j) in self.guessed_locations:
+                    row_display.append(cell)
+                else:
+                    if hide_ships:
+                        row_display.append('🌫')
+                    else:
+                        row_display.append(cell)
+            print(f"{i} {' '.join(row_display)}")
+
+    def update(self, x_coordinate, y_coordinate, symbol):
+        """
+        Update the board with the given symbol at the given coordinates.
+
+        Args:
+            x_coordinate (int): The x-coordinate of the cell to be updated.
+            y_coordinate (int): The y-coordinate of the cell to be updated.
+            symbol (str): The symbol to be placed at the given coordinates.
+        """
+        self.grid[x_coordinate][y_coordinate] = symbol
+        self.guessed_locations.add((x_coordinate, y_coordinate))
+
+    def initialize_planets(self, num_planets):
+        """ 
+        Initialize the board with the given number of planets.
+á
+        Args:
+            num_planets (int): The number of planets to be placed on the board.
+        """
+        while len(self.planets) < num_planets:
+            x_coordinate = random.randint(0, self.size - 1)
+            y_coordinate = random.randint(0, self.size - 1)
+            if (x_coordinate, y_coordinate) not in self.planets and \
+                self.grid[x_coordinate][y_coordinate] == '🌫':
+                self.planets.add((x_coordinate, y_coordinate))
+                self.grid[x_coordinate][y_coordinate] = '🪐'
 
 class Ship:
     """
