@@ -259,7 +259,36 @@ class SpaceshipGame:
         """
         Play the game.
         """
-       pass
+        player_name = input("Enter your name: ")
+        while True:
+            try:
+                board_size = int(input("Enter the board size min size = 5 (5x5): "))
+                if board_size >= 5:
+                    break
+                else:
+                    print("Board size must be at least 5. Please enter a valid board size.")
+            except ValueError:
+                print("Invalid input. Please enter a valid integer for the board size.")
+
+        while True:
+            try:
+                num_ships = int(input("Enter the number of spaceships you want to place: "))
+                if num_ships >= 5 and num_ships <= (board_size * board_size) * 0.3:
+                    break
+                else:
+                    print("Number of spaceships must be between 5 and 30% of the board size.")
+            except ValueError:
+                print("Invalid input. Please enter a valid number of spaceships.")
+
+        player = User(player_name, board_size, num_ships)
+        computer = User("Computer", board_size, num_ships)
+
+        typewriter_effect(f"Welcome to Spaceship, {player_name}!")
+
+        player.place_ships()
+        self.place_computer_ships(computer, num_ships, board_size)
+        player.board.initialize_planets(board_size)  # Initialize planets for the player
+        computer.board.initialize_planets(board_size)  # Initialize planets for the computer
 
     def computer_make_guess(self, board_size, player_board):
         """
