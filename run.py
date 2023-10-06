@@ -137,7 +137,9 @@ class Ship:
             owner (str): The owner of the spaceship.
             coordinates (list of tuple): The coordinates occupied by the spaceship.
         """
-        pass
+        self.owner = owner
+        self.coordinates = coordinates
+        self.sunk = False
 
 class User:
     """
