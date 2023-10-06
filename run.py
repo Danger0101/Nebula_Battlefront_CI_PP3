@@ -290,6 +290,98 @@ class SpaceshipGame:
         player.board.initialize_planets(board_size)  # Initialize planets for the player
         computer.board.initialize_planets(board_size)  # Initialize planets for the computer
 
+        while True:
+            time.sleep(1)
+            clear_terminal()
+            print(f"{player.name}'s Board:")
+            player.board.display(False)
+            print("\nComputer's Board:")
+            computer.board.display(True)
+
+            x_coordinate, y_coordinate = player.get_valid_input()  # Player's Turn
+            self.rounds_played += 1
+
+            hit = False
+            extra_munitions = False
+            for ship in computer.ships:
+                for coord in ship.coordinates:
+                    if coord == (x_coordinate, y_coordinate):
+                        hit = True
+                        ship.coordinates.remove(coord)
+                        if not ship.coordinates:
+                            ship.sunk = True
+                            player.score += 1
+                            player.ships_sunk += 1
+                            message = f"Spaceship at was found ({x_coordinate}, {y_coordinate})."
+                            typewriter_effect(message)
+                            computer.board.update(x_coordinate, y_coordinate, '💥')
+                            break
+
+            if not hit:
+                for planet in computer.board.planets:
+                    if planet == (x_coordinate, y_coordinate):
+                        extra_munitions = True
+                        message = "Extra munitions found, take another guess!"
+                        typewriter_effect(message)
+                        computer.board.update(x_coordinate, y_coordinate, '🪐')
+                        break
+
+            if not hit and not extra_munitions:
+                message = f"You shot and found nothing at ({x_coordinate}, {y_coordinate})."
+                typewriter_effect(message)
+                computer.board.update(x_coordinate, y_coordinate, 'M')
+
+            if extra_munitions:
+                continue
+
+            if all(ship.sunk for ship in computer.ships):
+                typewriter_effect(f"{player.name} has sunk {player.score}/{num_ships}")
+                typewriter_effect(f"In {self.rounds_played} rounds. Congratulations!")
+                display_win_art()  # Display win text art
+                break
+
+            x_coordinate, y_coordinate = self.computer_make_guess(player.board.size, player.board)
+            self.rounds_played += 1
+
+            message = f"Computer's Turn: Attempted shot at ({x_coordinate}, {y_coordinate})."
+            typewriter_effect(message)
+
+            hit = False
+            for ship in player.ships:
+                for coord in ship.coordinates:
+                    if coord == (x_coordinate, y_coordinate):
+                        hit = True
+                        ship.coordinates.remove(coord)
+                        if not ship.coordinates:
+                            ship.sunk = True
+                            computer.score += 1
+                            message = f"Spaceship at was found ({x_coordinate}, {y_coordinate})."
+                            typewriter_effect(message)
+                            player.board.update(x_coordinate, y_coordinate, '💥')
+                            break
+
+            if not hit:
+                for planet in player.board.planets:
+                    if planet == (x_coordinate, y_coordinate):
+                        message = "Extra munitions found, take another guess!"
+                        typewriter_effect(message)
+                        player.board.update(x_coordinate, y_coordinate, '🪐')
+                        break
+
+            if not hit and not extra_munitions:
+                message = f"Computer shot and found nothing at ({x_coordinate}, {y_coordinate})."
+                typewriter_effect(message)
+                player.board.update(x_coordinate, y_coordinate, 'M')
+
+            if extra_munitions:
+                continue
+
+            if all(ship.sunk for ship in player.ships):
+                typewriter_effect(f"Computer has sunk {computer.score}/{num_ships}")
+                typewriter_effect(f"In {self.rounds_played} rounds. Better luck next time!")
+                display_loss_art()  # Display loss text art
+                break
+
     def computer_make_guess(self, board_size, player_board):
         """
         Generate a random guess for the computer.
