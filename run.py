@@ -167,7 +167,20 @@ class User:
         """
         Determine how the user wants to place their spaceships and place them accordingly.
         """
-        pass
+        print(f"{self.name}, how would you like to place your spaceships?")
+        print("1. Manually choose ship locations")
+        print("2. Have them placed randomly")
+
+        while True:
+            choice = input("Enter your choice (1 or 2): ")
+            if choice == "1":
+                self.place_ships_manually()
+                break
+            elif choice == "2":
+                self.place_ships_randomly()
+                break
+            else:
+                print("Invalid choice. Please enter 1 or 2.")
 
     def place_ships_manually(self):
         """
