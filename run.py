@@ -249,8 +249,41 @@ class SpaceshipGame:
     """
     Represents a game of Spaceship.
     """
-    pass
+    def __init__(self):
+        """
+        Initialize the game.
+        """
+        self.rounds_played = 0
 
+    def play(self):
+        """
+        Play the game.
+        """
+       pass
+
+    def computer_make_guess(self, board_size, player_board):
+        """
+        Generate a random guess for the computer.
+
+        Args:
+            board_size (int): The size of the game board.
+            player_board (Board): The player's game board.
+
+        Returns:
+            tuple: A tuple containing the x_coordinate and y_coordinate of the guess.
+        """
+        pass
+
+    def place_computer_ships(self, computer, num_ships, board_size):
+        """
+        Place the computer's spaceships on the board.
+
+        Args:
+            computer (User): The computer player.
+            num_ships (int): The number of spaceships to place.
+            board_size (int): The size of the game board.
+        """
+        pass
 def display_win_art():
     """
     Display a winning message in ASCII art.
