@@ -209,7 +209,6 @@ class User:
         """
         Place the user's spaceships randomly on the board.
         """
-        pass
 
     def get_valid_input(self):
         """
@@ -218,7 +217,21 @@ class User:
         Returns:
             tuple: A tuple containing the x_coordinate and y_coordinate coordinates.
         """
-        pass
+        while True:
+            try:
+                input_str = input(f"{self.name}'s Turn: Enter the X and Y coordinates (eg. 2 3): ")
+                x_coordinate, y_coordinate = map(int, input_str.split())
+                if 0 <= x_coordinate < self.board.size and 0 <= y_coordinate < self.board.size:
+                    position = (x_coordinate, y_coordinate)
+                    if position not in self.guessed_locations:
+                        self.guessed_locations.add(position)
+                        return x_coordinate, y_coordinate
+                    else:
+                        print(f"You have already guessed this spot. Try again, {self.name}.")
+                else:
+                    print("Invalid coordinates. Please enter coordinates within the board.")
+            except ValueError:
+                print("Invalid input. Please enter valid numbers for the coordinates.")
 
 class SpaceshipGame:
     """
