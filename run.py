@@ -154,7 +154,13 @@ class User:
             board_size (int): The size of the game board.
             num_ships (int): The number of spaceships the user wants to place.
         """
-        pass
+        self.name = name
+        self.board = Board(board_size)
+        self.ships = []
+        self.num_ships = num_ships
+        self.score = 0
+        self.ships_sunk = 0
+        self.guessed_locations = set()
 
 
     def place_ships(self):
