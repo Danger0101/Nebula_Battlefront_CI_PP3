@@ -209,6 +209,18 @@ class User:
         """
         Place the user's spaceships randomly on the board.
         """
+        for _ in range(1, self.num_ships + 1):
+            coordinates = []
+            while True:
+                x_coordinate = random.randint(0, self.board.size - 1)
+                y_coordinate = random.randint(0, self.board.size - 1)
+                if (x_coordinate, y_coordinate) not in coordinates and \
+                    self.board.grid[x_coordinate][y_coordinate] == '🌫':
+                    coordinates.append((x_coordinate, y_coordinate))
+                    self.board.grid[x_coordinate][y_coordinate] = '🚀'
+                    self.ships.append(Ship(self.name, coordinates))
+                    print(f"{self.name}'s spaceship placed at ({x_coordinate}, {y_coordinate})")
+                    break
 
     def get_valid_input(self):
         """
