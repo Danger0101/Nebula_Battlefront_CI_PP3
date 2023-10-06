@@ -409,7 +409,18 @@ class SpaceshipGame:
             num_ships (int): The number of spaceships to place.
             board_size (int): The size of the game board.
         """
-        pass
+        for _ in range(1, num_ships + 1):
+            coordinates = []
+            while True:
+                x_coordinate = random.randint(0, board_size - 1)
+                y_coordinate = random.randint(0, board_size - 1)
+                if (x_coordinate, y_coordinate) not in coordinates and \
+                    computer.board.grid[x_coordinate][y_coordinate] == '🌫':
+                    coordinates.append((x_coordinate, y_coordinate))
+                    computer.board.grid[x_coordinate][y_coordinate] = '🚀'
+                    computer.ships.append(Ship("Computer", coordinates))
+                    break
+
 def display_win_art():
     """
     Display a winning message in ASCII art.
