@@ -4,6 +4,8 @@ and the main function to run the game.
 """
 
 import os
+import time
+import sys
 
 def clear_terminal():
     """
@@ -22,7 +24,11 @@ def typewriter_effect(text, delay=0.05):
     Returns:
         None
     """
-    pass
+    for char in text:
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(delay)
+    print()
 
 class TitleScreen:
     """
