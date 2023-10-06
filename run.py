@@ -4,6 +4,7 @@ and the main function to run the game.
 """
 
 import os
+import random
 import time
 import sys
 
@@ -34,13 +35,32 @@ class TitleScreen:
     """
     Represents the title screen of the game.
     """
-    pass
+    def __init__(self):
+        self.title = r"""
+         _   _      _           _         ____        _   _   _       __                 _   
+        | \ | | ___| |__  _   _| | __ _  | __ )  __ _| |_| |_| | ___ / _|_ __ ___  _ __ | |_ 
+        |  \| |/ _ \ '_ \| | | | |/ _` | |  _ \ / _` | __| __| |/ _ \ |_| '__/ _ \| '_ \| __|
+        | |\  |  __/ |_) | |_| | | (_| | | |_) | (_| | |_| |_| |  __/  _| | | (_) | | | | |_ 
+        |_| \_|\___|_.__/ \__,_|_|\__,_| |____/ \__,_|\__|\__|_|\___|_| |_|  \___/|_| |_|\__|
+                                                                                                                                            
+        """
+        self.play_game = None
 
     def display(self):
         """
         Display the title screen and ask if the user wants to play the game.
         """
-        pass
+        print(self.title)
+        while True:
+            choice = input("Do you want to play Spaceship Game? (yes/no): ").strip().lower()
+            if choice == "yes":
+                self.play_game = True
+                break
+            elif choice == "no":
+                self.play_game = False
+                break
+            else:
+                print("Invalid choice. Please enter 'yes' or 'no'.")
 
 class Board:
     """
