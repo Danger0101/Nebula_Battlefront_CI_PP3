@@ -1,31 +1,64 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Nebula Battlefront!
 
-Welcome USER_NAME,
+---
+## User Stories
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+---
 
-## Reminders
+## Testing
+### How I tested
+| What test was completed | Passed? Y(yes)/N(no) |
+|:-----------------------:|:-------------------:|
+|  |  |
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+### bugs encountered
 
-## Creating the Heroku app
+| Bugs/Issues Encountered | How problem was fixed | Fixed Y(yes)/N(no) |
+|:-----------------------:|:---------------------:|:------------------:|
+|  |  |  |
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+---
 
-1. `heroku/python`
-2. `heroku/nodejs`
+## Validation testing
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+### Python
 
-Connect your GitHub repository and deploy as normal.
+All Scripts checked with [PEP8 Code institute]()
 
-## Constraints
+| **Sctipt** | **Any Errors?** | **Warnings?** | Other note worthy comments |
+|:----------:|:---------------:|:-------------:|:--------------------------:|
+|  |  |  |  |
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+## Deployment
+Used GitHub Pages to bring the site to life [View The Site Here](https://danger0101.github.io/JavaScript-Quiz-PP2/index.html)
 
------
-Happy coding!
+## Technology used
+- [Python]()
+- [Code Institute Python escentials template]()
+- [Visual Studios Code (VSCode)](https://visualstudio.microsoft.com/)
+- [Github](https://github.com/)
+- [Hypervisor (virtual enviorment)](https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/about/)
+- [Git](https://git-scm.com/)
+- [Github Desktop App](https://desktop.github.com/)
+- [ui.dev Am I Responsive](https://ui.dev/amiresponsive)
+
+## Wireframes
+
+## Credits
+**Code related**
+
+- My previous assessor for ideas on the readme file and the footer issues PP1 had. Sorry do to the nature of assessing I have no idea who you are but thank you for the invaluable advice.
+
+**Other Notible Mentions**
+
+- [My wife](https://www.twitch.tv/flame_121) who’s been supper supportive of this change in career for me and just being out right amazing we will get her into this one way or another I am sure.
+
+- [picsart ASCII Art generation tool](https://tools.picsart.com/text/font-generator/text-art/)
+
+- [Code Institute](https://codeinstitute.net/) for providing an excellent accelerated learning platform worth every penny.
+---
+## Future feature ideas
+| **Features to add** | **Added Y(yes)/N(no)** |
+|:-------------------:|:--------------------:|
+|  |  |
