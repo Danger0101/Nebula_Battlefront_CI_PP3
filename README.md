@@ -16,7 +16,7 @@ The game includes the following features:
 3. Two otions now **"yes"** to play or **"no"** to end the game.
 4. choose your option. All prompts must be followed by hitting **ENTER** key. **Invalid** enteries will be prompted to try again.
 5. Now enter a username.
-6. Now choose a board size 5 or greater. (eg. 5 is a 5x5 grid)
+6. Now choose a board size 5 or greater. (eg. 5 is a 5x5 grid) **Recommendation** Keep board size udner 10 on the web version.
 7. Now enter how many ships you want to have in the game minimum 5 and maximum is 30% of the grid size. (eg. 5x5 min 5 max 7)
 8. Choose to place ships yourself or let the game pick randomly. choice 1 is manual (You place) and 2 is randomly where the game chooses.
 9. If manually placed you are prompted for each ships x and y coordinates with a space between them. (Eg. "1 2")
@@ -72,6 +72,7 @@ The game includes the following features:
 | Had numerious issues getting planets to work correctly | Took several itterations of code and testing to find one I was satisfied with which is called extra munitions now | Y |
 | If a user types outside of a prompt, the terminal may inadvertently accept that input for the next prompt. | Was unable to find a good working solution that didn't hinder gameplay | N |
 | Manual ship placement was causing issues as it seemed to be updating guessed locations | Fix was added a clear guessed locations for player and computer after ships have been placed| Y |
+| While not a direct bug due to terminal size for launched version of the project you can make a large board thats difficult to guess on | Its intended but user discression advised | N/A |
 
 ---
 ## Validation testing
