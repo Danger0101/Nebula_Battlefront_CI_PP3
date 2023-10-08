@@ -64,6 +64,7 @@ The game includes the following features:
 | Hit a planet and received extra munitions | Y |
 | Game ends when a player wins | Y |
 | Game ends when all rounds are played | Y |
+| Running the game at all playble stages | Y |
 
 ### bugs encountered
 
