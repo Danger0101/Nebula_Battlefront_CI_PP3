@@ -13,7 +13,7 @@ def clear_terminal():
     """
     Clear the terminal screen.
     """
-    # clear terminal code from https://stackoverflow.com/questions/2084508/clear-terminal-in-python
+    # clear terminal see reademe for more info
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
@@ -28,7 +28,7 @@ def typewriter_effect(text, delay=0.05):
     Returns:
         None
     """
-    # Typewriter effect code unspiration from https://stackoverflow.com/questions/20302331/typing-effect-in-python
+    # Typewriter effect see readme for more info
     for char in text:
         sys.stdout.write(char)
         sys.stdout.flush()
