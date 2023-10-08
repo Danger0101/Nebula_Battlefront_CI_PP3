@@ -303,7 +303,7 @@ class SpaceshipGame:
         self.place_computer_ships(computer, num_ships, board_size)  # Place the computer's spaceships
         player.board.initialize_planets(board_size)   # Initialize planets for the player
         computer.board.initialize_planets(board_size)  # Initialize planets for the computer
-        
+
         # Clear guessed locations after all ships have been placed
         player.guessed_locations.clear()
         computer.guessed_locations.clear()
