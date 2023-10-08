@@ -164,7 +164,7 @@ Used GitHub and heroku to bring the site to life [View The Site Here](https://ne
 
 - [clear terminal code](https://stackoverflow.com/questions/2084508/clear-terminal-in-python)
 
--[Typewriter effect code](https://stackoverflow.com/questions/20302331/typing-effect-in-python)
+- [Typewriter effect code](https://stackoverflow.com/questions/20302331/typing-effect-in-python)
 
 - [My wife](https://www.twitch.tv/flame_121) who’s been supper supportive of this change in career for me and just being out right amazing we will get her into this one way or another I am sure.
 
