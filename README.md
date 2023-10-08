@@ -51,7 +51,6 @@ The game includes the following features:
 
 ---
 ## Testing
-### How I tested
 | What test was completed | Passed? Y(yes)/N(no) |
 |:-----------------------:|:-------------------:|
 | Title screen displays correctly | Y |
