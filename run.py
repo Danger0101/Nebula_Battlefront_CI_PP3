@@ -71,7 +71,7 @@ class TitleScreen:
                 self.play_game = False
                 break
             else:
-                print("Invalid choice. Please enter 'yes' or 'no'.")
+                typewriter_effect("Invalid choice. Please enter 'yes' or 'no'.")
 
 
 class Board:
@@ -180,9 +180,9 @@ class User:
         """
         Determine how the user wants to place their spaceships and place them accordingly.
         """
-        print(f"{self.name}, how would you like to place your spaceships?")
-        print("1. Manually choose ship locations")
-        print("2. Have them placed randomly")
+        typewriter_effect(f"{self.name}, how would you like to place your spaceships?")
+        typewriter_effect("1. Manually choose ship locations")
+        typewriter_effect("2. Have them placed randomly")
 
         while True:  # Loop until the user enters a valid choice
             choice = input("Enter your choice (1 or 2): ")
@@ -193,7 +193,7 @@ class User:
                 self.place_ships_randomly()
                 break
             else:
-                print("Invalid choice. Please enter 1 or 2.")
+                typewriter_effect("Invalid choice. Please enter 1 or 2.")
 
     def place_ships_manually(self):
         """
@@ -212,10 +212,10 @@ class User:
                     self.ships.append(Ship(self.name, coordinates))
                     break
                 elif (x_coordinate, y_coordinate) in coordinates:  # Check if the coordinates are already occupied
-                    print(f"You have already placed spaceship {ship_number} at "
+                    typewriter_effect(f"You have already placed spaceship {ship_number} at "
                           f"({x_coordinate}, {y_coordinate}). Try again.")
                 else:
-                    print("Invalid coordinates or spot already occupied. "
+                    typewriter_effect("Invalid coordinates or spot already occupied. "
                           "Please choose valid coordinates.")
 
     def place_ships_randomly(self):
@@ -231,7 +231,7 @@ class User:
                     coordinates.append((x_coordinate, y_coordinate))
                     self.board.grid[x_coordinate][y_coordinate] = '🚀'
                     self.ships.append(Ship(self.name, coordinates))
-                    print(f"{self.name}'s spaceship placed at ({x_coordinate}, {y_coordinate})")
+                    typewriter_effect(f"{self.name}'s spaceship placed at ({x_coordinate}, {y_coordinate})")
                     break
 
     def get_valid_input(self):
@@ -251,11 +251,12 @@ class User:
                         self.guessed_locations.add(position)
                         return x_coordinate, y_coordinate
                     else:  # User has already guessed this spot
-                        print(f"You have already guessed this spot. Try again, {self.name}.")
+                        typewriter_effect("You have already used those coordinates.")
+                        typewriter_effect(f"Please Try again, {self.name}.")
                 else:  # Coordinates are not within the board
-                    print("Invalid coordinates. Please enter coordinates within the board.")
+                    typewriter_effect("Invalid coordinates. Please enter coordinates within the board.")
             except ValueError:  # User did not enter valid integers
-                print("Invalid input. Please enter valid numbers for the coordinates.")
+                typewriter_effect("Invalid input. Please enter valid numbers for the coordinates.")
 
 
 class SpaceshipGame:
@@ -279,9 +280,9 @@ class SpaceshipGame:
                 if board_size >= 5:  # Check if the board size is at least 5
                     break
                 else:
-                    print("Board size must be at least 5. Please enter a valid board size.")
+                    typewriter_effect("Board size must be at least 5. Please enter a valid board size.")
             except ValueError:
-                print("Invalid input. Please enter a valid integer for the board size.")
+                typewriter_effect("Invalid input. Please enter a valid integer for the board size.")
 
         while True:  # Loop until the user enters a valid number of spaceships
             try:  # Check if the user entered a valid integer
@@ -290,9 +291,9 @@ class SpaceshipGame:
                 if num_ships >= 5 and num_ships <= (board_size * board_size) * 0.3:
                     break
                 else:
-                    print("Number of spaceships must be between 5 and 30% of the board size.")
+                    typewriter_effect("Number of spaceships must be between 5 and 30% of the board size.")
             except ValueError:
-                print("Invalid input. Please enter a valid number of spaceships.")
+                typewriter_effect("Invalid input. Please enter a valid number of spaceships.")
 
         player = User(player_name, board_size, num_ships)
         computer = User("Computer", board_size, num_ships)
@@ -311,9 +312,9 @@ class SpaceshipGame:
         while True:  # Loop until the game is over
             time.sleep(1)
             clear_terminal()
-            print(f"{player.name}'s Board:")
+            typewriter_effect(f"{player.name}'s Board:")
             player.board.display(False)
-            print("\nComputer's Board:")
+            typewriter_effect("\nComputer's Board:")
             computer.board.display(True)
 
             x_coordinate, y_coordinate = player.get_valid_input()  # Player's Turn
@@ -479,7 +480,7 @@ def main():
         game = SpaceshipGame()
         game.play()
     else:
-        print("Goodbye!")
+        typewriter_effect("Goodbye!")
 
 
 # Run the game
