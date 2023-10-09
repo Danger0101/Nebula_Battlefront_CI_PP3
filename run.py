@@ -251,8 +251,7 @@ class User:
                         self.guessed_locations.add(position)
                         return x_coordinate, y_coordinate
                     else:  # User has already guessed this spot
-                        typewriter_effect("You have already used those coordinates.")
-                        typewriter_effect(f"Please Try again, {self.name}.")
+                        typewriter_effect(f"You have already used those coordinates. Please Try again, {self.name}.")
                 else:  # Coordinates are not within the board
                     typewriter_effect("Invalid coordinates. Please enter coordinates within the board.")
             except ValueError:  # User did not enter valid integers
