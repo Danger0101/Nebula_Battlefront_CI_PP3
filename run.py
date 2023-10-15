@@ -125,7 +125,7 @@ class Board:
     def initialize_planets(self, num_planets):
         """
         Initialize the board with the given number of planets.
-á
+
         Args:
             num_planets (int): The number of planets to be placed on the board.
         """
