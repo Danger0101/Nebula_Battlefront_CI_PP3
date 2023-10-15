@@ -64,6 +64,8 @@ The game includes the following features:
 | Game ends when a player wins | Y |
 | Game ends when all rounds are played | Y |
 | Running the game at all playble stages | Y |
+| Played the game over 50 times to completion | Y |
+| Typing while its printing | N |
 
 ### bugs encountered
 
@@ -71,6 +73,7 @@ The game includes the following features:
 |:-----------------------:|:---------------------:|:------------------:|
 | Had numerious issues getting planets to work correctly | Took several itterations of code and testing to find one I was satisfied with which is called extra munitions now | Y |
 | If a user types outside of a prompt, the terminal may inadvertently accept that input for the next prompt. | Was unable to find a good working solution that didn't hinder gameplay | N |
+| If user inputs outside of prompt it will put it into its typed text | Unable to find a working solution at this time | N |
 | Manual ship placement was causing issues as it seemed to be updating guessed locations | Fix was added a clear guessed locations for player and computer after ships have been placed| Y |
 | While not a direct bug due to terminal size for launched version of the project you can make a large board thats difficult to guess on | Its intended but user discression advised | N/A |
 
@@ -82,9 +85,8 @@ All Scripts checked with [PEP8 Code institute](https://pep8ci.herokuapp.com/)
 
 | **Line** | **Errorrs or Warning** | **Does it affect game play Negativly?** |
 |:----------:|:---------------:|:-------------:|
-| 16 | E501 line too long (99 > 79 characters) | No |
-| 31 | E501 line too long (114 > 79 characters) | No |
 | 66 | E501 line too long (92 > 79 characters) | No |
+| 74 | E501 line too long (80 > 79 characters) | No |
 | 89 | E501 line too long (92 > 79 characters) | No |
 | 98 | E501 line too long (98 > 79 characters) | No |
 | 123 | E501 line too long (92 > 79 characters) | No |
@@ -94,29 +96,33 @@ All Scripts checked with [PEP8 Code institute](https://pep8ci.herokuapp.com/)
 | 151 | E501 line too long (83 > 79 characters) | No |
 | 154 | E501 line too long (87 > 79 characters) | No |
 | 181 | E501 line too long (90 > 79 characters) | No |
+| 183 | E501 line too long (87 > 79 characters) | No |
 | 202 | E501 line too long (82 > 79 characters) | No |
 | 203 | E501 line too long (94 > 79 characters) | No |
 | 208 | E501 line too long (92 > 79 characters) | No |
 | 209 | E501 line too long (122 > 79 characters) | No |
 | 214 | E501 line too long (114 > 79 characters) | No |
-| 215 | E501 line too long (80 > 79 characters) | No |
+| 215 | E501 line too long (92 > 79 characters) | No |
+| 216 | E128 continuation line under-indented for visual indent | No |
+| 218 | E501 line too long (86 > 79 characters) | No |
+| 219 | E128 continuation line under-indented for visual indent | No |
 | 230 | E501 line too long (122 > 79 characters) | No |
-| 234 | E501 line too long (96 > 79 characters) | No |
+| 234 | E501 line too long (108 > 79 characters) | No |
 | 242 | E501 line too long (84 > 79 characters) | No |
 | 246 | E501 line too long (99 > 79 characters) | No |
 | 248 | E501 line too long (144 > 79 characters) | No |
 | 250 | E501 line too long (113 > 79 characters) | No |
-| 254 | E501 line too long (93 > 79 characters) | No |
-| 256 | E501 line too long (92 > 79 characters) | No |
-| 258 | E501 line too long (87 > 79 characters) | No |
+| 254 | E501 line too long (117 > 79 characters) | No |
+| 256 | E501 line too long (104 > 79 characters) | No |
+| 258 | E501 line too long (99 > 79 characters) | No |
 | 278 | E501 line too long (84 > 79 characters) | No |
-| 282 | E501 line too long (92 > 79 characters) | No |
-| 284 | E501 line too long (88 > 79 characters) | No |
+| 282 | E501 line too long (104 > 79 characters) | No |
+| 284 | E501 line too long (100 > 79 characters) | No |
 | 288 | E501 line too long (92 > 79 characters) | No |
 | 289 | E501 line too long (90 > 79 characters) | No |
 | 290 | E501 line too long (83 > 79 characters) | No |
-| 293 | E501 line too long (94 > 79 characters) | No |
-| 295 | E501 line too long (82 > 79 characters) | No |
+| 293 | E501 line too long (106 > 79 characters) | No |
+| 295 | E501 line too long (94 > 79 characters) | No |
 | 303 | E501 line too long (101 > 79 characters) | No |
 | 304 | E501 line too long (89 > 79 characters) | No |
 | 305 | E501 line too long (92 > 79 characters) | No |
